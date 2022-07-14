@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2022_07_14_031517) do
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.integer "Number"
-    t.integer "Color"
+    t.integer "number"
+    t.integer "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
