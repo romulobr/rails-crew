@@ -1,0 +1,2 @@
+class PlayingCard < Card
+end
