@@ -4,10 +4,12 @@ To avoid user permission issues:
 Before you build with docker compose
 Add this to the bottom of your ~/.bashrc file or equivalent if you use other shell.
 Make sure you create a new terminal session after you make changes to .bashrc, .zshrc, etc, or they won't be applied.
-
+You can see your groupname and username by running the id command.
 ```
 export APP_USER_UID=$(id -u)
 export APP_GROUP_GID=$(id -g)
+export APP_GROUP=yourusername
+export APP_USER=yourgruponame
 ```
 
 You can also build correctly with this command
