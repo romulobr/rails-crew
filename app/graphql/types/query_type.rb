@@ -13,8 +13,16 @@ module Types
     description:"returns all playing cards"
 
     def playingCards
-        PlayingCard.all
+      PlayingCard.all
     end
 
+    field:players,
+    [Types::PlayerType],
+    null:false,
+    description:"returns all players"
+
+    def players
+      Player.all
+    end
   end
 end
