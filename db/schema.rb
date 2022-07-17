@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_15_153055) do
+ActiveRecord::Schema.define(version: 2022_07_17_195058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 2022_07_15_153055) do
     t.integer "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "player_states", force: :cascade do |t|
+    t.boolean "is_active"
+    t.bigint "player_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_player_states_on_player_id"
+  end
+
+  create_table "player_states_playing_cards", id: false, force: :cascade do |t|
+    t.bigint "player_state_id", null: false
+    t.bigint "playing_card_id", null: false
   end
 
   create_table "players", force: :cascade do |t|
@@ -33,4 +46,5 @@ ActiveRecord::Schema.define(version: 2022_07_15_153055) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "player_states", "players"
 end
