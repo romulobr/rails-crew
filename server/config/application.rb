@@ -19,6 +19,9 @@ Bundler.require(*Rails.groups)
 
 module Myapp
   class Application < Rails::Application
+    config.api_only = true
+    config.debug_exception_response_format = :default
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 

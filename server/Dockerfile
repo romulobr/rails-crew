@@ -32,12 +32,6 @@ RUN addgroup -S $APP_GROUP -g $APP_GROUP_GID && \
       mkdir $APP_PATH && \
       chown $APP_USER:$APP_GROUP $APP_PATH
 
-ENV PATH=/root/.yarn/bin:$PATH
-RUN apk add --virtual build-yarn curl && \
-    touch ~/.bashrc && \
-    curl -o- -L https://yarnpkg.com/install.sh | sh && \
-    apk del build-yarn
-
 
 # Add a script to be executed every time the container starts.
 COPY ./docker-entrypoint.sh /usr/local/bin/
