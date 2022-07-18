@@ -8,6 +8,7 @@ gem 'rails', '~> 5.2.8'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app api
+# Use Puma as the app api
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -56,3 +57,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "graphql", "~> 2.0"
 
 gem 'graphiql-rails', group: :development
+
+gem 'rack-cors'

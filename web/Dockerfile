@@ -20,4 +20,4 @@ WORKDIR $APP_PATH
 USER $APP_USER_UID
 
 # Configure the main process to run when running the image
-CMD ["npm","start"]
+CMD ["yarn","start"]
