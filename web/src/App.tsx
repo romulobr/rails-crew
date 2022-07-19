@@ -3,12 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {useQuery, gql} from '@apollo/client';
 import {PlayerData} from "./graphql/api-types";
-
-const GET_PLAYERS = gql`
-    query GetPlayers {
-        players{id,name}
-    }
-`;
+import {GET_PLAYERS} from "./graphql/queries";
 
 function App() {
     const {loading, error, data} = useQuery<PlayerData>(GET_PLAYERS);
@@ -17,7 +12,7 @@ function App() {
             {data && data.players.map(({id, name}) => (
                 <div>
                     <pre>
-                    {name}
+                    {name+loading+error}
                     </pre>
                 </div>
             ))}
