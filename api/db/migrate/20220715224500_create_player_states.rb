@@ -3,6 +3,7 @@ class CreatePlayerStates < ActiveRecord::Migration[5.2]
     create_table :player_states do |t|
       t.boolean :is_active
       t.references :player, foreign_key: true
+      t.references :game_state, foreign_key: true
       t.timestamps
     end
   end

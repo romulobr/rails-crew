@@ -6,6 +6,8 @@ services:
       - db:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
   api:
     build:
       context: api

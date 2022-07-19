@@ -50,8 +50,8 @@ playingCards = PlayingCard.create([
                                     { number: 7, color: 4 },
                                     { number: 8, color: 4 },
                                     { number: 9, color: 4 },
-                                    { number: 1, color: 5 },
-                                    { number: 2, color: 5 },
-                                    { number: 3, color: 5 },
-                                    { number: 4, color: 5 }
+                                    { number: 1, color: 0, is_rocket: true },
+                                    { number: 2, color: 0, is_rocket: true },
+                                    { number: 3, color: 0, is_rocket: true },
+                                    { number: 4, color: 0, is_rocket: true }
                                   ])
