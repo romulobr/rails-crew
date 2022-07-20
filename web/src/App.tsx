@@ -1,21 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {useQuery, gql} from '@apollo/client';
-import {PlayerData} from "./graphql/api-types";
-import {GET_PLAYERS} from "./graphql/queries";
+import {PlayerSelector} from "./components/player-selector";
+import {GameSessionSelector} from "./components/game-session-selector";
+import {GameSessionCreator} from "./components/game-session-creator";
 
 function App() {
-    const {loading, error, data} = useQuery<PlayerData>(GET_PLAYERS);
     return (
-        <div className="App">
-            {data && data.players.map(({id, name}) => (
-                <div>
-                    <pre>
-                    {name+loading+error}
-                    </pre>
-                </div>
-            ))}
+        <div>
+            <PlayerSelector/>
+            <GameSessionSelector/>
+            <GameSessionCreator/>
         </div>
     );
 }

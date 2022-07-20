@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 # Remove a potentially pre-existing api.pid for Rails.
-rm -f ./app/tmp/pids/server.pid
+rm -f ./tmp/pids/server.pid
 
 # Fix ownership of output files
 finish() {
