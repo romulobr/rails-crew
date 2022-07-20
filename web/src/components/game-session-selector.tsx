@@ -1,6 +1,5 @@
 import {useQuery} from "@apollo/client";
 import React from "react";
-import {GET_PLAYERS, PlayerData} from "../graphql/player";
 import {Selector} from "./selector";
 import {GameSessionData, GET_GAME_SESSIONS} from "../graphql/game-sessions";
 
