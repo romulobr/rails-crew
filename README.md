@@ -17,20 +17,46 @@ You can also build correctly with this command
 APP_USER_UID=$(id -u) APP_GROUP_GID=$(id -g) docker-compose up --build
 ```
 
-Optional, also add aliases to your bashrc file, so be able to type less
+Optional, also add aliases to your bashrc file, to be able to type less
 ```
 alias c = "docker-compose"
+alias u = "docker-compose up"
+alias d = "docker-compose down --remove orphans"
 alias w = "docker-compose run web"
+alias a = "docker-compose run api"
 ```
 
-After that, you can use the app normally, you might want to setup the database with
+API setup
+--
+
+You can use the app as you would do with any rails app, you might want to setup the database with
 
 ```
 docker-compose run web rails db:setup 
 ```
 
-And run it with 
+WEB setup
+--
+
+you need to run yarn before you bring the web image up or the dependencies will not be installed
 
 ```
+docker compose run web yarn
+```
+
+Running the application
+--
+```
 docker-compose up 
+```
+
+Short version
+--
+Make sure you export your user variables somehow, then run:
+```
+docker compose build
+docker compose run api rails db:setup
+docker compose run api rails db:migrate
+docker compose run web yarn
+docker compose up
 ```
